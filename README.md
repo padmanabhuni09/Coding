@@ -1,5 +1,6 @@
 Solution for Q1:
 ===============
+
 #include <string.h>
 #include<iostream>
 
