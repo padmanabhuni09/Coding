@@ -26,6 +26,6 @@ select
      THEN 'B'
     WHEN marks >= 40
      THEN 'C' ELSE 'Fail'
-  END AS grade
-FROM
+  end AS grade
+from
   students;
