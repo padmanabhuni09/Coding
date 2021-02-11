@@ -1,25 +1,35 @@
-#include <string.h>
-#include<iostream>
-
+#include <iostream>
+#include <string>
 using namespace std;
 
-class Palindrome
-{
-public:
-static bool stringPalindrome(const std::string& word)
-{
-  std::string rs(word.rbegin(), word.rend());  // reverse the string 
-  return strcasecmp(rs.c_str(), word.c_str()) ; // ignore the case and proceed with comparison
- }
- 
-};
+void Palindrome(string);
+
+
+void Palindrome(string MyString) {
+  int i = 0;
+  int j = MyString.length() - 1;
+  int flag = 0;
+
+  while(j > i){
+    if (tolower(MyString[i]) != tolower(MyString[j])){
+      flag = 1;
+      break;
+    }
+    i++;
+    j--;
+  }
+
+  if (flag == 0){
+    cout<< MyString <<" is Palindrome.\n";
+  }
+  else{
+    cout << MyString <<" is not Palindrome\n";
+  }
+}
 
 int main() {
-    
-    if ( Palindrome::stringPalindrome("Dad") != 0 )
-    cout << "Not Palindrome" << endl;
-    else
-    cout << "it is Palindrome" << endl;
-        
-    return 0;
+  Palindrome("1881");
+  Palindrome("Dad");
+  Palindrome("Step on no pets");
+  return 0;
 }
